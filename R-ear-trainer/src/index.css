@@ -1,0 +1,369 @@
+:root {
+  --red-border: 5px solid #B30E0E;
+  --red-border-sm: 2px solid #B30E0E;
+
+  --text-color-red: #B30E0E;
+
+  --button-bk-black: #222;
+
+  --background-neutral: #EAEAEA;
+  --background-hover: #444;
+  --background-hover-light: #666;
+
+  --border-hover: #F0E68C;
+  --border-active:#FFD700;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*Header styling*/
+.header {
+  background-color: rgba(0, 0, 0, 1);
+  border: var(--red-border);
+  color: var(--background-neutral);
+    font-size: 24px;
+    text-align: center;
+    font-family: "Special Elite";
+}
+.header > span {
+  color: red;
+}
+
+@media(max-width) {
+  .header {
+    width: 330px;
+    background-color: rgba(0, 0, 0, 0.8);
+  border: var(--red-border);
+  color: var(--text-color-red);
+    font-size: 12px;
+    text-align: center;
+    font-family: "Special Elite";
+  }
+}
+
+/*Body and children styling*/
+body {
+  background-image: url('randy.jpg');
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.body-container{
+  border: var(--red-border);
+  height: 100vh;
+  display: flex;
+}
+
+.CD1, .CD2, .CD3 {
+  flex-basis: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: var(--red-border);
+  border-radius: 10px;
+}
+
+.CD1, .CD3 {
+  height: 487px;
+  margin: 3.5%;
+}
+
+.CD2 {
+  height: 650px;
+  margin-top: 2%;
+  margin-bottom: 0.5%;
+}
+
+@media (max-width: 50em) {
+  
+  .body-container {
+    background-image: url('randy.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+    height: 410vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CD1, .CD3 {
+    order: 2;
+    flex-basis: 20%;
+
+  }
+
+  .CD2 {
+    flex-basis: 100%;
+
+    border: var(--red-border);
+    height: auto;
+    width: 40px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+/*button*/
+
+#random-btn-container{
+  text-align: center;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 50em){
+
+  .btn-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-column-gap: 7px;
+      grid-row-gap: 0px;
+  }
+}
+
+.mozart-button {
+  background-color: var(--button-bk-black);
+    color: var(--background-neutral);
+    border: var(--red-border-sm);
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 0px 50px 0px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    font-family: "Special Elite";
+    letter-spacing: 1px;
+}
+.mozart-button:hover {
+  background-color: var(--background-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+  color: var(--border-hover);
+}
+
+.mozart-button:active {
+  background-color: var(--background-hover-light);
+  border-color: var(--border-active) ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+
+
+.reset-button {
+  background-color: var(--button-bk-black);;
+  color: var(--background-neutral);
+  border: var(--red-border-sm);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  font-family: "Special Elite";
+  letter-spacing: 1px;
+}
+
+.reset-button:hover {
+  background-color: var(--background-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+  color: var(--border-hover);
+}
+
+.reset-button:active {
+  background-color: var(--background-hover-light);
+  border-color: var(--border-active);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+.call-Ozzy {
+  background-color: var(--button-bk-black);
+  color: var(--background-neutral);
+  border: var(--red-border-sm);
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-left: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  font-family: "Special Elite";
+  letter-spacing: 1px;
+}
+
+.call-Ozzy:hover {
+  background-color: var(--background-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+  color: var(--border-hover);
+}
+
+.call-Ozzy:active {
+  background-color: var(--background-hover-light);
+  border-color: var(--border-active);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+.btnBorder {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    background-color: var(--button-bk-black);
+    color: var(--background-neutral);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--red-border-sm);
+    margin: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    font-family: "Special Elite";
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.btnBorder:hover {
+  background-color: var(--background-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+  color: var(--border-hover);
+}
+.btnBorder:active {
+  background-color: var(--background-hover-light);
+  border-color: var(--border-active);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+@media (max-width: 50em){
+  .mozart-button, .reset-button, .call-Ozzy {
+    background-color: var(--button-bk-black);
+      color: var(--background-neutral);
+      border: var(--red-border-sm);
+      border-radius: 12px;
+      padding: 10px 20px;
+      margin: 0px 50px 0px 50px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 130px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      font-family: "Special Elite";
+      letter-spacing: 1px;
+  }
+
+  .call-Ozzy{
+    margin-left: 135px;
+  }
+  .mozart-button:hover {
+    background-color: var(--background-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+    color: var(--border-hover);
+  }
+  
+  .mozart-button:active {
+    background-color: var(--background-hover-light);
+    border-color: var(--border-active) ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px);
+  }
+}
